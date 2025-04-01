@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kişisel Finans Yönetimi</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-wallet"></i> Kişisel Finans Yönetimi</h1>
+            <p>Finansal geleceğinizi planlamak için basit ve etkili bir araç</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="budget">
+            <h2><i class="fas fa-money-check-alt"></i> Bütçe Planlaması</h2>
+            <div id="budget-content">
+                <div class="budget-input">
+                    <input type="number" id="budget-amount" placeholder="Aylık bütçe miktarı (₺)">
+                    <button onclick="setBudget()"><i class="fas fa-save"></i> Bütçe Belirle</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="income">
+            <h2><i class="fas fa-plus-circle"></i> Gelir Ekle</h2>
+            <div class="income-form">
+                <div class="input-group">
+                    <input type="text" id="income-title" placeholder="Gelir başlığı (örn. Maaş, Burs)">
+                    <input type="number" id="income-amount" placeholder="Miktar (₺)">
+                </div>
+                <div class="action-buttons">
+                    <button onclick="addIncome()"><i class="fas fa-plus"></i> Ekle</button>
+                </div>
+            </div>
+            <div id="income-list"></div>
+        </div>
+
+        <div class="expenses">
+            <h2><i class="fas fa-minus-circle"></i> Gider Ekle</h2>
+            <div class="expense-form">
+                <div class="input-group">
+                    <input type="text" id="expense-title" placeholder="Gider başlığı (örn. Kira, Market)">
+                    <input type="number" id="expense-amount" placeholder="Miktar (₺)">
+                </div>
+                <div class="action-buttons">
+                    <button onclick="addExpense()"><i class="fas fa-plus"></i> Ekle</button>
+                </div>
+            </div>
+            <div id="expense-list"></div>
+        </div>
+
+        <div class="summary">
+            <h2><i class="fas fa-chart-pie"></i> Finansal Özet</h2>
+            <div id="summary-content">
+                <p>Toplam Bütçe: <span id="total-budget">0</span> ₺</p>
+                <p>Toplam Gelir: <span id="total-income">0</span> ₺</p>
+                <p>Toplam Gider: <span id="total-expense">0</span> ₺</p>
+                <p>Kalan: <span id="balance">0</span> ₺</p>
+            </div>
+        </div>
+
+        <!-- Grafikler Bölümü -->
+        <div class="charts">
+            <h2><i class="fas fa-chart-bar"></i> Finansal Grafikler</h2>
+            <div class="charts-container">
+                <div class="chart-row">
+                    <div class="chart-card">
+                        <h3>Gelir/Gider Dağılımı</h3>
+                        <canvas id="income-expense-chart"></canvas>
+                    </div>
+                    <div class="chart-card">
+                        <h3>Kategorilere Göre Gelir ve Gider Dağılımı</h3>
+                        <canvas id="expense-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Raporlama Bölümü -->
+        <div class="reports">
+            <h2><i class="fas fa-file-alt"></i> Finansal Rapor</h2>
+            <div class="report-actions">
+                <button onclick="generateReport()"><i class="fas fa-file-export"></i> Rapor Oluştur</button>
+                <button onclick="printReport()"><i class="fas fa-print"></i> Yazdır</button>
+            </div>
+            <div id="financial-report" class="report-content">
+                <!-- Rapor içeriği JavaScript ile oluşturulacak -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Kişisel Finans Yönetimi | Bitirme Projesi</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
